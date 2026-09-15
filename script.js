@@ -438,6 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizarHerramientas();
     inicializarSeccionImportancia();
     configurarModal();
+    inicializarSPA();
 });
 
 /* --- 1. SECCIÓN CALIDAD --- */
@@ -804,4 +805,77 @@ function toggleMenu() {
     if (menu) {
         menu.classList.toggle("open");
     }
+}
+
+/* =======================================================
+   NAVEGACIÓN SPA (PANTALLAS SEPARADAS)
+======================================================= */
+function inicializarSPA() {
+    const secciones = document.querySelectorAll("main > section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function mostrarSeccion(id) {
+        // Ocultar todas las secciones
+        secciones.forEach(sec => sec.classList.remove("active-screen"));
+        
+        // Mostrar la sección objetivo
+        const seccionObjetivo = document.getElementById(id);
+        if (seccionObjetivo) {
+            seccionObjetivo.classList.add("active-screen");
+        } else {
+            // Si no existe, mostrar la primera (inicio)
+            const inicio = document.getElementById("inicio");
+            if(inicio) inicio.classList.add("active-screen");
+        }
+
+        // Actualizar menú activo
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + id) {
+                link.classList.add("active");
+            }
+        });
+
+        // Cerrar el menú si está abierto (versión móvil)
+        const menu = document.getElementById("menu");
+        if (menu && menu.classList.contains("open")) {
+            menu.classList.remove("open");
+        }
+        
+        // Hacer scroll al inicio de la página (por si acaso)
+        window.scrollTo(0, 0);
+    }
+
+    // Escuchar clicks en los enlaces de navegación
+    navLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            window.location.hash = targetId; // Actualizar URL sin recargar
+            mostrarSeccion(targetId);
+        });
+    });
+
+    // Escuchar clicks en los enlaces del footer
+    const footerLinks = document.querySelectorAll(".footer-links a");
+    footerLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            window.location.hash = targetId;
+            mostrarSeccion(targetId);
+        });
+    });
+
+    // Manejar carga inicial y navegación con botones del navegador (atrás/adelante)
+    function manejarHash() {
+        let hash = window.location.hash.substring(1);
+        if (!hash) hash = "inicio";
+        mostrarSeccion(hash);
+    }
+
+    window.addEventListener("hashchange", manejarHash);
+    
+    // Inicializar primera vista
+    manejarHash();
 }

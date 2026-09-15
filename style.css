@@ -1207,3 +1207,18 @@ body {
         height: 200px;
     }
 }
+
+/* =======================================================
+   SPA LAYOUT (PANTALLAS SEPARADAS)
+======================================================= */
+main > section {
+    display: none !important;
+}
+
+main > section.active-screen {
+    display: block !important;
+}
+
+main > section.hero.active-screen {
+    display: flex !important;
+}
