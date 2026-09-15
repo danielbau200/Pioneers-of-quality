@@ -851,6 +851,19 @@ function navegarAPantalla(id) {
         }
     });
 
+    // Actualizar badge de diapositiva en la cabecera
+    const slideBadge = document.getElementById("headerSlideBadge");
+    if (slideBadge) {
+        const slideNumbers = {
+            "inicio": "SLIDE 01 / 05",
+            "calidad": "SLIDE 02 / 05",
+            "precursores": "SLIDE 03 / 05",
+            "herramientas": "SLIDE 04 / 05",
+            "importancia": "SLIDE 05 / 05"
+        };
+        slideBadge.textContent = slideNumbers[id] || "SLIDE 01 / 05";
+    }
+
     // Cerrar menú móvil si está abierto
     const menu = document.getElementById("menu");
     if (menu && menu.classList.contains("open")) {
