@@ -808,74 +808,83 @@ function toggleMenu() {
 }
 
 /* =======================================================
-   NAVEGACIÓN SPA (PANTALLAS SEPARADAS)
+   NAVEGACIÓN POR PANTALLAS SEPARADAS (SPA)
 ======================================================= */
-function inicializarSPA() {
-    const secciones = document.querySelectorAll("main > section");
-    const navLinks = document.querySelectorAll(".nav-link");
+function navegarAPantalla(id) {
+    if (!id) id = "inicio";
+    
+    // Lista de pantallas válidas
+    const pantallasValidas = ["inicio", "calidad", "precursores", "herramientas", "importancia"];
+    if (!pantallasValidas.includes(id)) {
+        id = "inicio";
+    }
 
-    function mostrarSeccion(id) {
-        // Ocultar todas las secciones
-        secciones.forEach(sec => sec.classList.remove("active-screen"));
-        
-        // Mostrar la sección objetivo
-        const seccionObjetivo = document.getElementById(id);
-        if (seccionObjetivo) {
-            seccionObjetivo.classList.add("active-screen");
+    // Actualizar hash en la URL sin salto brusco
+    if (window.location.hash !== "#" + id) {
+        window.location.hash = id;
+    }
+
+    // Ocultar todas las pantallas y mostrar solo la seleccionada
+    const todasLasPantallas = document.querySelectorAll(".screen-page");
+    todasLasPantallas.forEach(p => {
+        p.classList.remove("active");
+        p.style.display = "none";
+    });
+
+    const pantallaDestino = document.getElementById(id);
+    if (pantallaDestino) {
+        pantallaDestino.classList.add("active");
+        if (id === "inicio") {
+            pantallaDestino.style.display = "flex";
         } else {
-            // Si no existe, mostrar la primera (inicio)
-            const inicio = document.getElementById("inicio");
-            if(inicio) inicio.classList.add("active-screen");
+            pantallaDestino.style.display = "block";
         }
+    }
 
-        // Actualizar menú activo
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === "#" + id) {
-                link.classList.add("active");
+    // Actualizar enlaces del menú
+    const navLinks = document.querySelectorAll(".minimalist-nav .nav-link");
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        const screen = link.getAttribute("data-screen") || link.getAttribute("href")?.replace("#", "");
+        if (screen === id) {
+            link.classList.add("active");
+        }
+    });
+
+    // Cerrar menú móvil si está abierto
+    const menu = document.getElementById("menu");
+    if (menu && menu.classList.contains("open")) {
+        menu.classList.remove("open");
+    }
+
+    // Subir el scroll suavemente al tope
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Hacer la función global para ser llamada desde botones y onclick en el HTML
+window.navegarAPantalla = navegarAPantalla;
+
+function inicializarSPA() {
+    // Interceptar clicks en todos los enlaces de navegación con hash (#)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href").replace("#", "");
+            if (targetId && document.getElementById(targetId)) {
+                e.preventDefault();
+                navegarAPantalla(targetId);
             }
         });
-
-        // Cerrar el menú si está abierto (versión móvil)
-        const menu = document.getElementById("menu");
-        if (menu && menu.classList.contains("open")) {
-            menu.classList.remove("open");
-        }
-        
-        // Hacer scroll al inicio de la página (por si acaso)
-        window.scrollTo(0, 0);
-    }
-
-    // Escuchar clicks en los enlaces de navegación
-    navLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute("href").substring(1);
-            window.location.hash = targetId; // Actualizar URL sin recargar
-            mostrarSeccion(targetId);
-        });
     });
 
-    // Escuchar clicks en los enlaces del footer
-    const footerLinks = document.querySelectorAll(".footer-links a");
-    footerLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute("href").substring(1);
-            window.location.hash = targetId;
-            mostrarSeccion(targetId);
-        });
-    });
-
-    // Manejar carga inicial y navegación con botones del navegador (atrás/adelante)
-    function manejarHash() {
-        let hash = window.location.hash.substring(1);
+    // Escuchar cambios en el hash del navegador (por ejemplo botones atrás/adelante)
+    function verificarHash() {
+        let hash = window.location.hash.replace("#", "").trim();
         if (!hash) hash = "inicio";
-        mostrarSeccion(hash);
+        navegarAPantalla(hash);
     }
 
-    window.addEventListener("hashchange", manejarHash);
-    
-    // Inicializar primera vista
-    manejarHash();
+    window.addEventListener("hashchange", verificarHash);
+
+    // Cargar pantalla inicial
+    verificarHash();
 }
