@@ -491,11 +491,7 @@ function renderizarPrecursores() {
 
     contenedor.innerHTML = precursoresData.map(p => `
         <div class="precursor-card precursor-horizontal" onclick="abrirModalPrecursor(${p.id})">
-            <div class="card-hero-image side-image">
-                ${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}" class="hero-precursor-img">` : `<div class="hero-initials">${p.fotoLetras}</div>`}
-                <span class="country-pill-overlay">${p.pais}</span>
-            </div>
-            <div class="card-content-right">
+            <div class="card-content-left">
                 <div class="card-info">
                     <h3 class="precursor-name">${p.nombre}</h3>
                     <div class="aportacion-tag-box">
@@ -507,6 +503,10 @@ function renderizarPrecursores() {
                     <span>Ver más</span>
                     <span class="arrow-icon">→</span>
                 </div>
+            </div>
+            <div class="card-hero-image side-image">
+                ${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}" class="hero-precursor-img">` : `<div class="hero-initials">${p.fotoLetras}</div>`}
+                <span class="country-pill-overlay">${p.pais}</span>
             </div>
         </div>
     `).join("");

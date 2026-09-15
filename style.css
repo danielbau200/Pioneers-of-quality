@@ -692,25 +692,26 @@ main {
 }
 
 /* =======================================================
-   SLIDE 3: PRECURSORES (ESTILO "OUR STAFF" / "SERVICES")
+   SLIDE 3: PRECURSORES (INFO A LA IZQUIERDA, FOTO A LA DERECHA)
 ======================================================= */
 .grid-precursores {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     gap: 24px;
 }
 
 .precursor-card {
     background: #ffffff;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--color-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-slide-card);
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Horizontal: info a la izquierda, foto a la derecha */
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
+    min-height: 220px;
 }
 
 .precursor-card::before {
@@ -718,15 +719,16 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    height: 4px;
+    bottom: 0;
+    width: 4px;
     background: var(--teal-primary);
     opacity: 0;
     transition: opacity 0.25s ease;
+    z-index: 3;
 }
 
 .precursor-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
     border-color: rgba(0, 208, 156, 0.4);
 }
@@ -735,76 +737,34 @@ main {
     opacity: 1;
 }
 
-.side-image {
-    width: 100%;
-    height: 200px;
-    background: #F1F5F9;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-precursor-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    transition: transform 0.4s ease;
-}
-
-.precursor-card:hover .hero-precursor-img {
-    transform: scale(1.05);
-}
-
-.hero-initials {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--teal-primary);
-    opacity: 0.2;
-}
-
-.country-pill-overlay {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background: #ffffff;
-    color: var(--color-dark);
-    font-size: 0.72rem;
-    font-weight: 800;
-    padding: 5px 12px;
-    border-radius: var(--radius-pill);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--color-border);
-}
-
-.card-content-right {
-    padding: 24px;
+/* Info a la izquierda */
+.card-content-left {
+    padding: 22px 24px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex: 1;
+    min-width: 0;
 }
 
 .card-info {
-    flex: 1;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .precursor-name {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--color-dark);
     margin-bottom: 10px;
     letter-spacing: -0.3px;
+    line-height: 1.2;
 }
 
 .aportacion-tag-box {
     background: #F8FAFC;
     border-left: 3.5px solid var(--teal-primary);
-    padding: 12px 14px;
+    padding: 10px 14px;
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
@@ -819,20 +779,20 @@ main {
 }
 
 .aportacion-text {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     color: var(--color-dark);
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
 .card-action-cue {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 800;
     color: var(--teal-dark);
-    padding-top: 14px;
+    padding-top: 12px;
     border-top: 1px solid var(--color-border);
 }
 
@@ -842,6 +802,55 @@ main {
 
 .precursor-card:hover .arrow-icon {
     transform: translateX(4px);
+}
+
+/* Foto a la derecha */
+.side-image {
+    width: 175px;
+    min-width: 175px;
+    background: #F1F5F9;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1.5px solid var(--color-border);
+}
+
+.hero-precursor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Centrado para que no corte la cabeza */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.precursor-card:hover .hero-precursor-img {
+    transform: scale(1.06);
+}
+
+.hero-initials {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--teal-primary);
+    opacity: 0.2;
+}
+
+.country-pill-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-dark);
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(4px);
 }
 
 /* =======================================================
@@ -1150,65 +1159,7 @@ main {
     line-height: 1.5;
 }
 
-/* =======================================================
-   BARRA INFERIOR DE SLIDE (STEPPER / CONTROLES DE PRESENTACIÓN)
-======================================================= */
-.slide-stepper-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
-    padding: 16px 24px;
-    background: #ffffff;
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-pill);
-    box-shadow: var(--shadow-slide-card);
-    max-width: 860px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.slide-nav-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 22px;
-    border-radius: var(--radius-pill);
-    border: 1.5px solid var(--color-border);
-    background: #ffffff;
-    color: var(--color-dark);
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.slide-nav-btn:hover {
-    border-color: var(--teal-primary);
-    color: var(--teal-primary);
-    background: var(--teal-light);
-}
-
-.slide-nav-btn.next {
-    background: var(--teal-primary);
-    color: #ffffff;
-    border-color: var(--teal-primary);
-    box-shadow: 0 4px 14px var(--teal-glow);
-}
-
-.slide-nav-btn.next:hover {
-    background: var(--teal-dark);
-    transform: translateY(-2px);
-}
-
-.slide-counter-badge {
-    font-family: var(--font-heading);
-    font-size: 0.82rem;
-    font-weight: 800;
-    color: var(--color-text-muted);
-    letter-spacing: 1.5px;
-}
 
 /* =======================================================
    MODAL GLOBAL ESTILO SLIDE
@@ -1492,16 +1443,7 @@ main {
         text-align: center;
     }
 
-    .slide-stepper-footer {
-        flex-direction: column;
-        gap: 14px;
-        border-radius: var(--radius-lg);
-    }
 
-    .slide-nav-btn {
-        width: 100%;
-        justify-content: center;
-    }
 
     .grid-precursores {
         grid-template-columns: 1fr;

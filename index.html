@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precursores de la Calidad | Business Solutions</title>
-    <meta name="description" content="Presentación interactiva de Precursores de la Calidad, herramientas e importancia en Ingeniería Industrial basada en plantilla ejecutiva.">
+    <title>Precursores de la Calidad | Ingeniería Industrial</title>
+    <meta name="description" content="Portal interactivo sobre los precursores de la calidad, sus herramientas fundamentales e importancia en la ingeniería industrial.">
 
     <!-- Tipografía corporativa geométrica: Montserrat y Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Cache-busting v=30 -->
-    <link rel="stylesheet" href="style.css?v=30">
+    <!-- Cache-busting v=40 -->
+    <link rel="stylesheet" href="style.css?v=40">
 </head>
 
 <body>
@@ -24,7 +24,6 @@
     <header class="header">
         <div class="header-inner">
             <a href="#inicio" class="brand-link" onclick="navegarAPantalla('inicio'); return false;">
-                <!-- Icono geométrico angular estilo plantilla Business Solutions -->
                 <div class="brand-geometric-icon">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M4 4h16v16H4z" opacity="0.3"></path>
@@ -33,8 +32,8 @@
                     </svg>
                 </div>
                 <div class="brand-text-group">
-                    <span class="brand-title">Business <span class="text-teal">Solutions</span></span>
-                    <span class="brand-subtitle">PRECURSORES DE LA CALIDAD</span>
+                    <span class="brand-title">PRECURSORES DE LA <span class="text-teal">CALIDAD</span></span>
+                    <span class="brand-subtitle">INGENIERÍA INDUSTRIAL</span>
                 </div>
             </a>
 
@@ -53,24 +52,20 @@
                 <a href="#herramientas" class="nav-link" data-screen="herramientas">HERRAMIENTAS</a>
                 <a href="#importancia" class="nav-link" data-screen="importancia">IMPORTANCIA</a>
             </nav>
-
-            <div class="header-slide-indicator">
-                <span class="slide-badge" id="headerSlideBadge">SLIDE 01 / 05</span>
-            </div>
         </div>
     </header>
 
 
     <!-- =======================================================
-         CONTENEDOR PRINCIPAL: DIAPOSITIVAS SEPARADAS (SPA)
+         CONTENEDOR PRINCIPAL: PANTALLAS SEPARADAS (SPA)
     ======================================================== -->
     <main>
 
         <!-- =======================================================
-             SLIDE 1: COVER (HERO ESMERALDA TURQUESA)
+             PANTALLA 1: INICIO (HERO VERDE ESMERALDA TURQUESA)
         ======================================================== -->
         <section id="inicio" class="screen-page active slide-cover">
-            <!-- Patrón geométrico de franjas angulares concéntricas como la plantilla -->
+            <!-- Patrón geométrico de franjas angulares concéntricas -->
             <div class="cover-geometric-pattern">
                 <div class="chevron-frame chevron-1"></div>
                 <div class="chevron-frame chevron-2"></div>
@@ -82,7 +77,7 @@
                 <div class="cover-content">
                     <!-- Icono central geométrico -->
                     <div class="cover-logo-icon">
-                        <svg viewBox="0 0 48 48" width="54" height="54" fill="none" stroke="#ffffff" stroke-width="3">
+                        <svg viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="#ffffff" stroke-width="3">
                             <rect x="6" y="6" width="36" height="36" rx="4" stroke-opacity="0.3"></rect>
                             <rect x="14" y="14" width="20" height="20" rx="2" stroke-opacity="0.6"></rect>
                             <rect x="22" y="22" width="10" height="10" rx="1"></rect>
@@ -90,27 +85,28 @@
                     </div>
 
                     <h1 class="cover-main-title">
-                        Business <span class="cover-title-light">Quality</span>
+                        PRECURSORES<br>DE LA <span class="cover-title-light">CALIDAD</span>
                     </h1>
-                    <h2 class="cover-sub-title">PRECURSORES DE LA CALIDAD</h2>
+                    <h2 class="cover-sub-title">EXCELENCIA & MEJORA CONTINUA EN INGENIERÍA INDUSTRIAL</h2>
+                    
                     <p class="cover-description">
                         "La calidad no es un acto, sino un hábito de mejora continua que impulsa la excelencia en las organizaciones."
                     </p>
 
                     <div class="cover-actions">
                         <a href="#calidad" class="btn-cover-white pill-btn" onclick="navegarAPantalla('calidad'); return false;">
-                            <span>Iniciar Presentación</span>
+                            <span>Iniciar Recorrido</span>
                             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </a>
                         <a href="#precursores" class="btn-cover-outline pill-btn" onclick="navegarAPantalla('precursores'); return false;">
-                            <span>Ver 13 Precursores</span>
+                            <span>Ver los 13 Precursores</span>
                         </a>
                     </div>
 
-                    <!-- Tarjetas de resumen inferiores estilo slides -->
+                    <!-- Tarjetas de resumen inferiores -->
                     <div class="cover-cards-row">
                         <div class="cover-card-mini">
                             <div class="card-mini-num">13</div>
@@ -131,17 +127,17 @@
 
 
         <!-- =======================================================
-             SLIDE 2: CALIDAD (ESTILO "ABOUT US" CON GEOMETRÍA)
+             PANTALLA 2: CALIDAD
         ======================================================== -->
         <section id="calidad" class="screen-page slide-white" style="display: none;">
             <div class="container slide-container">
                 <div class="slide-header">
-                    <span class="slide-tag">ABOUT QUALITY</span>
+                    <span class="slide-tag">FUNDAMENTOS</span>
                     <h2 class="slide-title">Concepto de <span class="text-teal">Calidad</span></h2>
                     <p class="slide-subtitle">Fundamentos teóricos, valor estratégico y cultura de mejora continua en la industria.</p>
                 </div>
 
-                <!-- Selector estilo lista numerada en rombos turquesa (como en la plantilla) -->
+                <!-- Selector con rombos numerados en turquesa -->
                 <div class="about-selector-nav">
                     <button class="step-selector-btn btn-calidad-tab active" data-tab="queEs">
                         <div class="step-diamond">1</div>
@@ -172,62 +168,36 @@
                 <div id="calidadContenido" class="interactive-content-container">
                     <!-- Renderizado por script.js -->
                 </div>
-
-                <!-- Barra de Navegación de Slide -->
-                <div class="slide-stepper-footer">
-                    <button class="slide-nav-btn prev" onclick="navegarAPantalla('inicio')">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        <span>Anterior: Portada</span>
-                    </button>
-                    <span class="slide-counter-badge">DIAPOSITIVA 02 / 05</span>
-                    <button class="slide-nav-btn next" onclick="navegarAPantalla('precursores')">
-                        <span>Siguiente: Precursores</span>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </button>
-                </div>
             </div>
         </section>
 
 
         <!-- =======================================================
-             SLIDE 3: PRECURSORES (ESTILO "OUR STAFF" GRID)
+             PANTALLA 3: PRECURSORES
         ======================================================== -->
         <section id="precursores" class="screen-page slide-white" style="display: none;">
             <div class="container slide-container">
                 <div class="slide-header">
-                    <span class="slide-tag">OUR LEADERS</span>
+                    <span class="slide-tag">LÍDERES DE LA EXCELENCIA</span>
                     <h2 class="slide-title">13 Precursores de la <span class="text-teal">Calidad</span></h2>
                     <p class="slide-subtitle">Los pioneros que revolucionaron la manufactura, la estadística y la gestión organizacional.</p>
                 </div>
 
-                <!-- Grid de Tarjetas limpias con acentos turquesa -->
+                <!-- Grid horizontal de Precursores (Info a la izquierda, Foto a la derecha) -->
                 <div id="contenedorPrecursores" class="grid-precursores">
                     <!-- Renderizado por script.js con las 13 tarjetas -->
-                </div>
-
-                <!-- Barra de Navegación de Slide -->
-                <div class="slide-stepper-footer">
-                    <button class="slide-nav-btn prev" onclick="navegarAPantalla('calidad')">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        <span>Anterior: Calidad</span>
-                    </button>
-                    <span class="slide-counter-badge">DIAPOSITIVA 03 / 05</span>
-                    <button class="slide-nav-btn next" onclick="navegarAPantalla('herramientas')">
-                        <span>Siguiente: Herramientas</span>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </button>
                 </div>
             </div>
         </section>
 
 
         <!-- =======================================================
-             SLIDE 4: HERRAMIENTAS (ESTILO "TIMELINE & SERVICES")
+             PANTALLA 4: HERRAMIENTAS
         ======================================================== -->
         <section id="herramientas" class="screen-page slide-white" style="display: none;">
             <div class="container slide-container">
                 <div class="slide-header">
-                    <span class="slide-tag">METHODS & TOOLS</span>
+                    <span class="slide-tag">METODOLOGÍAS Y MODELOS</span>
                     <h2 class="slide-title">Herramientas de la <span class="text-teal">Calidad</span></h2>
                     <p class="slide-subtitle">Modelos estadísticos, sistemas de inspección y filosofías de optimización operativa.</p>
                 </div>
@@ -236,30 +206,17 @@
                 <div id="contenedorHerramientas" class="minimalist-tools-list">
                     <!-- Renderizado por script.js con las 13 herramientas -->
                 </div>
-
-                <!-- Barra de Navegación de Slide -->
-                <div class="slide-stepper-footer">
-                    <button class="slide-nav-btn prev" onclick="navegarAPantalla('precursores')">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        <span>Anterior: Precursores</span>
-                    </button>
-                    <span class="slide-counter-badge">DIAPOSITIVA 04 / 05</span>
-                    <button class="slide-nav-btn next" onclick="navegarAPantalla('importancia')">
-                        <span>Siguiente: Importancia</span>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </button>
-                </div>
             </div>
         </section>
 
 
         <!-- =======================================================
-             SLIDE 5: IMPORTANCIA (ESTILO "BUSINESS IDEAS & METRICS")
+             PANTALLA 5: IMPORTANCIA
         ======================================================== -->
         <section id="importancia" class="screen-page slide-white" style="display: none;">
             <div class="container slide-container">
                 <div class="slide-header">
-                    <span class="slide-tag">IMPACT & VALUE</span>
+                    <span class="slide-tag">TRASCENDENCIA E IMPACTO</span>
                     <h2 class="slide-title">Importancia en las <span class="text-teal">Empresas</span></h2>
                     <p class="slide-subtitle">Ventajas competitivas, reducción de costos y satisfacción plena del cliente.</p>
                 </div>
@@ -284,19 +241,6 @@
                 <div id="importanciaContenido" class="interactive-content-container">
                     <!-- Renderizado por script.js -->
                 </div>
-
-                <!-- Barra de Navegación de Slide -->
-                <div class="slide-stepper-footer">
-                    <button class="slide-nav-btn prev" onclick="navegarAPantalla('herramientas')">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        <span>Anterior: Herramientas</span>
-                    </button>
-                    <span class="slide-counter-badge">DIAPOSITIVA 05 / 05</span>
-                    <button class="slide-nav-btn next" onclick="navegarAPantalla('inicio')">
-                        <span>Volver a Portada</span>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
-                    </button>
-                </div>
             </div>
         </section>
 
@@ -304,7 +248,7 @@
 
 
     <!-- =======================================================
-         MODAL GLOBAL DE DETALLE (ESTILO PLANTILLA GOOGLE SLIDES)
+         MODAL GLOBAL DE DETALLE
     ======================================================== -->
     <div id="infoModal" class="modal-overlay" aria-hidden="true">
         <div class="modal-container">
@@ -319,37 +263,37 @@
 
 
     <!-- =======================================================
-         PIE DE PÁGINA CORPORATIVO OSCURO (CONTRASTE SLIDE)
+         PIE DE PÁGINA CORPORATIVO OSCURO
     ======================================================== -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
                 <div class="brand-text-group">
-                    <span class="brand-title text-white">Business <span class="text-teal">Solutions</span></span>
-                    <span class="brand-subtitle text-muted-footer">PRECURSORES DE LA CALIDAD • INGENIERÍA INDUSTRIAL</span>
+                    <span class="brand-title text-white">PRECURSORES DE LA <span class="text-teal">CALIDAD</span></span>
+                    <span class="brand-subtitle text-muted-footer">INGENIERÍA INDUSTRIAL • EXCELENCIA Y MEJORA CONTINUA</span>
                 </div>
-                <p class="footer-desc">Plataforma interactiva ejecutiva basada en el diseño de plantilla corporativa con paleta esmeralda turquesa.</p>
+                <p class="footer-desc">Plataforma educativa interactiva sobre la evolución, metodologías e impacto de la calidad en las organizaciones.</p>
             </div>
             <div class="footer-nav">
-                <span class="footer-nav-title">Navegación de Diapositivas</span>
+                <span class="footer-nav-title">Navegación</span>
                 <div class="footer-links">
-                    <a href="#inicio" onclick="navegarAPantalla('inicio'); return false;">01. Portada</a>
-                    <a href="#calidad" onclick="navegarAPantalla('calidad'); return false;">02. Calidad</a>
-                    <a href="#precursores" onclick="navegarAPantalla('precursores'); return false;">03. Precursores</a>
-                    <a href="#herramientas" onclick="navegarAPantalla('herramientas'); return false;">04. Herramientas</a>
-                    <a href="#importancia" onclick="navegarAPantalla('importancia'); return false;">05. Importancia</a>
+                    <a href="#inicio" onclick="navegarAPantalla('inicio'); return false;">Inicio</a>
+                    <a href="#calidad" onclick="navegarAPantalla('calidad'); return false;">Calidad</a>
+                    <a href="#precursores" onclick="navegarAPantalla('precursores'); return false;">Precursores</a>
+                    <a href="#herramientas" onclick="navegarAPantalla('herramientas'); return false;">Herramientas</a>
+                    <a href="#importancia" onclick="navegarAPantalla('importancia'); return false;">Importancia</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container footer-bottom-inner">
                 <p>© 2026 Proyecto Académico de Ingeniería Industrial • Excelencia y Mejora Continua</p>
-                <p class="text-teal">Plantilla Business Solutions</p>
+                <p class="text-teal">Precursores de la Calidad</p>
             </div>
         </div>
     </footer>
 
-    <!-- Script con cache-busting v=30 -->
-    <script src="script.js?v=30"></script>
+    <!-- Script con cache-busting v=40 -->
+    <script src="script.js?v=40"></script>
 </body>
 </html>
