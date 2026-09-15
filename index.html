@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precursores de la Calidad | Ingeniería Industrial</title>
+    <meta name="description" content="Portal interactivo sobre los precursores de la calidad, sus herramientas fundamentales e importancia en la ingeniería industrial.">
+
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =======================================================
+         MENÚ DE NAVEGACIÓN MINIMALISTA SUPERIOR
+    ======================================================== -->
+    <header class="header">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav id="menu" class="minimalist-nav">
+            <a href="#inicio" class="nav-link">INICIO</a>
+            <a href="#calidad" class="nav-link">CALIDAD</a>
+            <a href="#precursores" class="nav-link">PRECURSORES</a>
+            <a href="#herramientas" class="nav-link">HERRAMIENTAS</a>
+            <a href="#importancia" class="nav-link">IMPORTANCIA</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- =======================================================
+             SECCIÓN 0: HERO INICIO
+        ======================================================== -->
+        <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-center">
+                <h1 class="hero-title">
+                    PRECURSORES<br>DE LA<br><span class="highlight">CALIDAD</span>
+                </h1>
+                <p class="hero-quote">
+                    "La calidad no es un acto, sino un hábito de mejora continua que impulsa la excelencia en las organizaciones."
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =======================================================
+             SECCIÓN 1: CALIDAD
+        ======================================================== -->
+        <section id="calidad" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>CALIDAD</h2>
+                </div>
+
+                <!-- Botones de Selección Estructurados según diseño -->
+                <div class="tabs-button-group">
+                    <button class="tab-pill btn-calidad-tab active" data-tab="queEs">
+                        <span class="pill-text">QUÉ ES</span>
+                    </button>
+                    <button class="tab-pill btn-calidad-tab" data-tab="importancia">
+                        <span class="pill-text">IMPORTANCIA</span>
+                    </button>
+                    <button class="tab-pill btn-calidad-tab" data-tab="mejoraContinua">
+                        <span class="pill-text">MEJORA CONTINUA</span>
+                    </button>
+                </div>
+
+                <!-- Contenedor Dinámico para Información e Imágenes -->
+                <div id="calidadContenido" class="interactive-content-container">
+                    <!-- JavaScript renderiza aquí -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =======================================================
+             SECCIÓN 2: PRECURSORES
+        ======================================================== -->
+        <section id="precursores" class="section section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>PRECURSORES</h2>
+                </div>
+
+                <!-- Tarjetas de Precursores (Foto -> Nombre -> Principal aportación) -->
+                <div id="contenedorPrecursores" class="grid-precursores">
+                    <!-- JavaScript genera las 13 tarjetas aquí -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =======================================================
+             SECCIÓN 3: HERRAMIENTAS
+        ======================================================== -->
+        <section id="herramientas" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>HERRAMIENTAS</h2>
+                </div>
+
+                <!-- Lista Minimalista Interactiva -->
+                <div id="contenedorHerramientas" class="minimalist-tools-list">
+                    <!-- JavaScript genera la lista interactiva aquí -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =======================================================
+             SECCIÓN 4: IMPORTANCIA
+        ======================================================== -->
+        <section id="importancia" class="section section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>IMPORTANCIA</h2>
+                </div>
+
+                <!-- Botones de Selección Estructurados -->
+                <div class="tabs-button-group">
+                    <button class="tab-pill btn-importancia-tab active" data-tab="empresas">
+                        <span class="pill-text">EMPRESAS</span>
+                    </button>
+                    <button class="tab-pill btn-importancia-tab" data-tab="precursores">
+                        <span class="pill-text">PRECURSORES</span>
+                    </button>
+                    <button class="tab-pill btn-importancia-tab" data-tab="actualidad">
+                        <span class="pill-text">ACTUALIDAD</span>
+                    </button>
+                </div>
+
+                <!-- Contenedor Dinámico para Importancia -->
+                <div id="importanciaContenido" class="interactive-content-container">
+                    <!-- JavaScript renderiza aquí -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- =======================================================
+         MODAL GLOBAL DE INFORMACIÓN DETALLADA
+    ======================================================== -->
+    <div id="infoModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container">
+            <button id="modalCloseBtn" class="modal-close-btn" aria-label="Cerrar modal">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+            <div id="modalBody" class="modal-body">
+                <!-- Contenido inyectado dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =======================================================
+         PIE DE PÁGINA
+    ======================================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>PRECURSORES DE LA CALIDAD</h3>
+                <p>Plataforma educativa interactiva sobre la evolución, métodos e impacto de la calidad industrial.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#calidad">Calidad</a>
+                <a href="#precursores">Precursores</a>
+                <a href="#herramientas">Herramientas</a>
+                <a href="#importancia">Importancia</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Proyecto Académico de Ingeniería Industrial • Excelencia y Mejora Continua</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=3"></script>
+</body>
+</html>
